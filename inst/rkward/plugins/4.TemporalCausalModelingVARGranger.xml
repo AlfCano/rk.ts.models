@@ -1,0 +1,125 @@
+<!DOCTYPE rkplugin >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<code file="4.TemporalCausalModelingVARGranger.js" />
+	<help file="4.TemporalCausalModelingVARGranger.rkh" />
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<logic>
+		<convert id="cond_var_df" sources="var_src_mode.string" mode="equals" standard="df" />
+		<convert id="cond_var_mts" sources="var_src_mode.string" mode="equals" standard="mts" />
+		<convert id="cond_var_auto" sources="var_lag_mode.string" mode="equals" standard="auto" />
+		<convert id="cond_var_man" sources="var_lag_mode.string" mode="equals" standard="manual" />
+		<connect governor="cond_var_df" client="frm_var_df.enabled" />
+		<connect governor="cond_var_mts" client="frm_var_mts.enabled" />
+		<connect governor="cond_var_auto" client="frm_var_auto.enabled" />
+		<connect governor="cond_var_man" client="frm_var_man.enabled" />
+		<script>
+			gui.addChangeCommand("var_src_mode.string", "update_var_root()");
+	    gui.addChangeCommand("var_df.available", "update_var_root()");
+	    function update_var_root() {
+	       var mode = gui.getValue("var_src_mode.string");
+	       var df = gui.getValue("var_df.available");
+	       if (mode === "df") {
+	          if (df !== "") {
+	             gui.setValue("var_vs.root", df);
+	          } else {
+	             gui.setValue("var_vs.root", "");
+	          }
+	       } else {
+	          gui.setValue("var_vs.root", "");
+	       }
+	    }
+		</script>
+	</logic>
+	<dialog label="4. Temporal Causal Modeling (VAR &amp; Granger)">
+		<row id="row_v1VD1VDIDF">
+			<varselector id="var_vs" />
+			<column id="clm_t1VD1VDIDF">
+				<tabbook>
+					<tab label="1. Variables &amp; Data" id="tab_1VrblsDt">
+						<column id="clm_rIDFDFS2MT">
+							<radio id="var_src_mode" label="Input Data Format">
+								<option label="Data Frame (Select 2 or more numeric columns)" value="df" checked="true" />
+								<option label="Multivariate Time Series (mts)" value="mts" />
+							</radio>
+							<frame label="Data Frame Input" id="frm_var_df">
+								<varslot id="var_df" label="Data Frame" source="var_vs" classes="data.frame" />
+								<varslot id="var_cols" label="Variables to Model (&gt;= 2 Numeric Columns)" source="var_vs" classes="numeric integer" multi="true" />
+								<dropdown id="var_freq" label="Frequency">
+									<option label="Monthly (12)" value="12" checked="true" />
+									<option label="Quarterly (4)" value="4" />
+									<option label="Yearly (1)" value="1" />
+									<option label="Weekly (52)" value="52" />
+								</dropdown>
+								<row id="row_sSY2020130">
+									<spinbox label="Start Year" id="var_yr" initial="2020" min="1" max="3000" type="integer" />
+									<spinbox label="Start Period" id="var_pd" initial="1" min="1" max="52" type="integer" />
+								</row>
+							</frame>
+							<frame label="MTS Object Input" id="frm_var_mts">
+								<varslot id="var_mts" label="Multivariate Time Series (mts)" source="var_vs" classes="mts ts" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+					<tab label="2. VAR &amp; Causality" id="tab_2VARCslt">
+						<column id="clm_rLOSAOLICV">
+							<radio id="var_lag_mode" label="Lag Order (p) Selection">
+								<option label="Auto-detect Optimal Lag via Information Criterion (VARselect)" value="auto" checked="true" />
+								<option label="Manual Fixed Lag Order (p)" value="manual" />
+							</radio>
+							<frame label="Automatic Lag Search" id="frm_var_auto">
+								<spinbox label="Max Lags to Search (lag.max)" id="var_lag_max" initial="6" min="1" max="24" type="integer" />
+								<dropdown id="var_ic" label="Selection Criterion">
+									<option label="AIC (Akaike)" value="AIC(n)" checked="true" />
+									<option label="SC / BIC (Schwarz)" value="SC(n)" />
+									<option label="HQ (Hannan-Quinn)" value="HQ(n)" />
+									<option label="FPE (Final Prediction Error)" value="FPE(n)" />
+								</dropdown>
+							</frame>
+							<frame label="Manual Lag" id="frm_var_man">
+								<spinbox label="Fixed Lag Order (p)" id="var_lag_p" initial="2" min="1" max="24" type="integer" />
+							</frame>
+							<dropdown id="var_type" label="Deterministic Regressors">
+								<option label="Constant (Intercept)" value="const" checked="true" />
+								<option label="Trend" value="trend" />
+								<option label="Both (Constant + Trend)" value="both" />
+								<option label="None" value="none" />
+							</dropdown>
+							<spinbox label="Forecast Horizon (n.ahead)" id="var_h" initial="12" min="1" max="120" type="integer" />
+							<checkbox id="var_chk_granger" label="Compute Granger Causality Tests (Cause -&gt; Effect)" value="1" checked="true" />
+							<checkbox id="var_chk_irf" label="Plot Impulse Response Functions (IRF)" value="1" />
+							<stretch />
+						</column>
+					</tab>
+					<tab label="3. Output" id="tab_3Output">
+						<column id="clm_fSOWSOWSVA">
+							<frame label="Save Objects to Workspace" id="frm_SvObjctW">
+								<saveobject label="Save VAR Model (varest) as" checkable="true" checked="true" initial="var_model" id="var_save_mod" />
+								<saveobject label="Save VAR Forecast as" checkable="true" initial="var_forecast" id="var_save_fc" />
+							</frame>
+							<frame label="HTML Graphics Size &amp; Resolution" id="frm_HTMLGrSR">
+								<row id="row_sHTMLPW850">
+									<spinbox label="HTML Plot Width (pixels)" id="var_plot_w" initial="850" min="100" max="5000" type="integer" />
+									<spinbox label="HTML Plot Height (pixels)" id="var_plot_h" initial="650" min="100" max="5000" type="integer" />
+									<spinbox label="Resolution (DPI)" id="var_plot_res" initial="120" min="72" max="600" type="integer" />
+								</row>
+							</frame>
+							<frame label="Save Plot Object" id="frm_SvPltObj">
+								<saveobject label="Save Forecast Plot (recorded) as" checkable="true" initial="var_plot" id="var_save_plot" />
+							</frame>
+							<stretch />
+						</column>
+					</tab>
+				</tabbook>
+				<preview label="Preview VAR Forecast Plot" id="prv_PrvVARFP" />
+			</column>
+		</row>
+	</dialog>
+</document>

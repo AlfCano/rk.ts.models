@@ -1,0 +1,67 @@
+<!DOCTYPE rkhelp >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<summary>
+	</summary>
+	<usage>
+	</usage>
+	<!--
+		<section id="sct_EDITORDE" title="EDIT OR DELETE ME">
+			EDIT OR DELETE ME
+		</section>
+	-->
+	<settings>
+		<caption id="tab_ModlNwDt" />
+		<setting id="app_mod">
+		</setting>
+		<setting id="app_mode">
+		</setting>
+		<caption id="frm_app_new" />
+		<setting id="app_ts">
+		</setting>
+		<setting id="app_reest">
+		</setting>
+		<setting id="app_h">
+		</setting>
+		<caption id="tab_PltOptns" />
+		<caption id="frm_PltCstmz" />
+		<setting id="app_theme">
+		</setting>
+		<setting id="app_plot_main">
+		</setting>
+		<setting id="app_plot_xlab">
+		</setting>
+		<setting id="app_plot_ylab">
+		</setting>
+		<caption id="tab_Output" />
+		<caption id="frm_SvObjctW" />
+		<setting id="app_save_fc">
+		</setting>
+		<setting id="app_save_mod">
+		</setting>
+		<caption id="frm_HTMLGrSR" />
+		<setting id="app_plot_w">
+		</setting>
+		<setting id="app_plot_h">
+		</setting>
+		<setting id="app_plot_res">
+		</setting>
+		<caption id="frm_SvPltObj" />
+		<setting id="app_save_plot">
+		</setting>
+	</settings>
+	<!--
+		<related>
+			<ul>
+				<li>
+					<link href="rkward://rhelp/..." />
+				</li>
+			</ul>
+		</related>
+	-->
+	<technical>
+	</technical>
+</document>

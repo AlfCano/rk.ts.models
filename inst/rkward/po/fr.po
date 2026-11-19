@@ -1,0 +1,387 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: rk.ts.models 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-19 12:00+0000\n"
+"PO-Revision-Date: 2026-11-19 12:00+0000\n"
+"Last-Translator: Alfonso Cano <alfonso.cano@correo.buap.mx>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# ================= MENÚS Y PESTAÑAS =================
+msgid "Time Series Models"
+msgstr "Modèles de Séries Temporelles"
+
+msgid "1. Expert Modeler (Auto-ARIMA, ETS, Ensemble)"
+msgstr "1. Modélisateur Expert (Auto-ARIMA, ETS, Ensemble)"
+
+msgid "2. Custom ARIMA & Dynamic Regression (xreg)"
+msgstr "2. ARIMA Personnalisé & Régression Dynamique (xreg)"
+
+msgid "3. Apply Saved Model"
+msgstr "3. Appliquer un Modèle Enregistré"
+
+msgid "4. Temporal Causal Modeling (VAR & Granger)"
+msgstr "4. Modélisation Causale Temporelle (VAR & Granger)"
+
+msgid "Data & Model"
+msgstr "Données & Modèle"
+
+msgid "Plot Options"
+msgstr "Options de Graphique"
+
+msgid "Output"
+msgstr "Sortie"
+
+msgid "1. Data & Regressors"
+msgstr "1. Données & Régresseurs"
+
+msgid "2. ARIMA Order & Horizon"
+msgstr "2. Ordre ARIMA & Horizon"
+
+msgid "3. Plot Options"
+msgstr "3. Options de Graphique"
+
+msgid "4. Output"
+msgstr "4. Sortie"
+
+msgid "Model & New Data"
+msgstr "Modèle & Nouvelles Données"
+
+msgid "1. Variables & Data"
+msgstr "1. Variables & Données"
+
+msgid "2. VAR & Causality"
+msgstr "2. VAR & Causalité"
+
+msgid "3. Output"
+msgstr "3. Sortie"
+
+# ================= MÓDULO 1 =================
+msgid "Time Series Object (ts)"
+msgstr "Objet Série Temporelle (ts)"
+
+msgid "Candidate Models (Expert Scope)"
+msgstr "Modèles Candidats (Portée Experte)"
+
+msgid "All (Compare Auto-ARIMA vs ETS - Pick Best by RMSE)"
+msgstr "Tous (Comparer Auto-ARIMA vs ETS - Meilleur par RMSE)"
+
+msgid "Auto-ARIMA Only"
+msgstr "Auto-ARIMA Uniquement"
+
+msgid "Exponential Smoothing (ETS) Only"
+msgstr "Lissage Exponentiel (ETS) Uniquement"
+
+msgid "Ensemble Forecast (Average of Auto-ARIMA + ETS)"
+msgstr "Prévision d'Ensemble (Moyenne Auto-ARIMA + ETS)"
+
+msgid "Forecast Horizon (h)"
+msgstr "Horizon de Prévision (h)"
+
+msgid "Auto Box-Cox Transformation (Stabilize variance, lambda = 'auto')"
+msgstr "Transformation Box-Cox Auto (Stabiliser variance, lambda = 'auto')"
+
+msgid "Outlier Detection & Adjustment"
+msgstr "Détection et Ajustement des Valeurs Aberrantes"
+
+msgid "None (Keep original series)"
+msgstr "Aucun (Conserver la série d'origine)"
+
+msgid "Fast Automatic Cleaning (forecast::tsclean)"
+msgstr "Nettoyage Automatique Rapide (forecast::tsclean)"
+
+msgid "SPSS-Style Iterative Detection: AO/LS/TC (tsoutliers::tso)"
+msgstr "Détection Itérative type SPSS : AO/LS/TC (tsoutliers::tso)"
+
+msgid "Run Residual Diagnostics (Ljung-Box Test on residuals)"
+msgstr "Diagnostics des Résidus (Test de Ljung-Box)"
+
+msgid "Expert Modeler Configuration"
+msgstr "Configuration du Modélisateur Expert"
+
+msgid "Save Forecast Object as"
+msgstr "Enregistrer la Prévision sous"
+
+msgid "Save Winning Model Object as (For Module 3)"
+msgstr "Enregistrer le Modèle Gagnant sous (Pour Module 3)"
+
+msgid "Preview Expert Forecast Plot"
+msgstr "Prévisualiser le Graphique Expert"
+
+# ================= MÓDULO 2 =================
+msgid "Input Data Source"
+msgstr "Source de Données d'Entrée"
+
+msgid "Time Series Object (ts - Univariate ARIMA)"
+msgstr "Objet Série Temporelle (ts - ARIMA Univarié)"
+
+msgid "Data Frame (Dynamic Regression with External Regressors xreg)"
+msgstr "Tableau de Données (Régression Dynamique avec xreg)"
+
+msgid "Univariate Series Input"
+msgstr "Entrée Série Univariée"
+
+msgid "Training Data Frame"
+msgstr "Tableau d'Entraînement"
+
+msgid "Target Variable (Y, Numeric)"
+msgstr "Variable Cible (Y, Numérique)"
+
+msgid "External Regressors (xreg - Optional, Numeric)"
+msgstr "Régresseurs Externes (xreg - Optionnel, Numérique)"
+
+msgid "Frequency"
+msgstr "Fréquence"
+
+msgid "Monthly (12)"
+msgstr "Mensuelle (12)"
+
+msgid "Quarterly (4)"
+msgstr "Trimestrielle (4)"
+
+msgid "Yearly (1)"
+msgstr "Annuelle (1)"
+
+msgid "Weekly (52)"
+msgstr "Hebdomadaire (52)"
+
+msgid "Daily - Business (5)"
+msgstr "Quotidienne - Ouvrée (5)"
+
+msgid "Daily - Full (7)"
+msgstr "Quotidienne - Complète (7)"
+
+msgid "Start Year"
+msgstr "Année de Début"
+
+msgid "Start Period"
+msgstr "Période de Début"
+
+msgid "Dynamic Regression Input (Data Frame)"
+msgstr "Entrée Régression Dynamique (Data Frame)"
+
+msgid "AR Order (p)"
+msgstr "Ordre AR (p)"
+
+msgid "Differencing (d)"
+msgstr "Différenciation (d)"
+
+msgid "MA Order (q)"
+msgstr "Ordre MA (q)"
+
+msgid "Seasonal AR (P)"
+msgstr "AR Saisonnier (P)"
+
+msgid "Seasonal Diff (D)"
+msgstr "Diff. Saisonnière (D)"
+
+msgid "Seasonal MA (Q)"
+msgstr "MA Saisonnier (Q)"
+
+msgid "ARIMA(p,d,q)(P,D,Q) Specification"
+msgstr "Spécification ARIMA(p,d,q)(P,D,Q)"
+
+msgid "Include Constant / Drift (include.constant = TRUE)"
+msgstr "Inclure Constante / Dérive (include.constant = TRUE)"
+
+msgid "Apply Auto Box-Cox Transformation (lambda = 'auto')"
+msgstr "Appliquer Transformation Box-Cox Auto (lambda = 'auto')"
+
+msgid "Forecast Horizon (h - Used when no xreg)"
+msgstr "Horizon de Prévision (h - Utilisé sans xreg)"
+
+msgid "Future Regressors Data Frames"
+msgstr "Tableaux des Régresseurs Futurs"
+
+msgid "Future Regressors Data Frame (newxreg - Required if xreg used)"
+msgstr "Tableau des Régresseurs Futurs (newxreg - Requis avec xreg)"
+
+msgid "Future Predictors for Forecasting (xreg)"
+msgstr "Prédicteurs Futurs pour la Prévision (xreg)"
+
+msgid "Save ARIMA Model Object as"
+msgstr "Enregistrer le Modèle ARIMA sous"
+
+msgid "Preview Custom ARIMA Plot"
+msgstr "Prévisualiser le Graphique ARIMA Personnalisé"
+
+# ================= MÓDULO 3 =================
+msgid "Saved Model Object (Arima / ets)"
+msgstr "Modèle Enregistré (Arima / ets)"
+
+msgid "Application Mode"
+msgstr "Mode d'Application"
+
+msgid "Apply Model to New Time Series (ts)"
+msgstr "Appliquer le Modèle à une Nouvelle Série (ts)"
+
+msgid "Forecast Directly from Saved Model (No new data)"
+msgstr "Prévoir Directement depuis le Modèle Enregistré"
+
+msgid "New Time Series (ts)"
+msgstr "Nouvelle Série Temporelle (ts)"
+
+msgid "Parameter Handling"
+msgstr "Gestion des Paramètres"
+
+msgid "Keep Saved Parameters (No re-estimation — SPSS Apply Mode)"
+msgstr "Conserver les Paramètres Enregistrés (Mode Appliquer SPSS)"
+
+msgid "Re-estimate Parameters on New Data (Keep Model Structure)"
+msgstr "Réestimer les Paramètres sur Nouvelles Données (Garder Structure)"
+
+msgid "New Data Options"
+msgstr "Options Nouvelles Données"
+
+msgid "Save Applied Forecast as"
+msgstr "Enregistrer la Prévision Appliquée sous"
+
+msgid "Save Applied Model as"
+msgstr "Enregistrer le Modèle Appliqué sous"
+
+msgid "Preview Applied Forecast Plot"
+msgstr "Prévisualiser la Prévision Appliquée"
+
+# ================= MÓDULO 4 =================
+msgid "Input Data Format"
+msgstr "Format des Données d'Entrée"
+
+msgid "Data Frame (Select 2 or more numeric columns)"
+msgstr "Data Frame (Sélectionner 2 colonnes numériques ou plus)"
+
+msgid "Multivariate Time Series (mts)"
+msgstr "Série Temporelle Multivariée (mts)"
+
+msgid "Data Frame"
+msgstr "Tableau de Données (Data Frame)"
+
+msgid "Variables to Model (>= 2 Numeric Columns)"
+msgstr "Variables à Modéliser (>= 2 Colonnes Numériques)"
+
+msgid "Data Frame Input"
+msgstr "Entrée Data Frame"
+
+msgid "MTS Object Input"
+msgstr "Entrée Objet MTS"
+
+msgid "Lag Order (p) Selection"
+msgstr "Sélection de l'Ordre de Retard (p)"
+
+msgid "Auto-detect Optimal Lag via Information Criterion (VARselect)"
+msgstr "Détection Auto du Retard Optimal (VARselect)"
+
+msgid "Manual Fixed Lag Order (p)"
+msgstr "Ordre de Retard Fixe Manuel (p)"
+
+msgid "Max Lags to Search (lag.max)"
+msgstr "Retards Max à Chercher (lag.max)"
+
+msgid "Selection Criterion"
+msgstr "Critère de Sélection"
+
+msgid "AIC (Akaike)"
+msgstr "AIC (Akaike)"
+
+msgid "SC / BIC (Schwarz)"
+msgstr "SC / BIC (Schwarz)"
+
+msgid "HQ (Hannan-Quinn)"
+msgstr "HQ (Hannan-Quinn)"
+
+msgid "FPE (Final Prediction Error)"
+msgstr "FPE (Erreur Finale de Prédiction)"
+
+msgid "Automatic Lag Search"
+msgstr "Recherche Automatique de Retards"
+
+msgid "Fixed Lag Order (p)"
+msgstr "Ordre de Retard Fixe (p)"
+
+msgid "Manual Lag"
+msgstr "Retard Manuel"
+
+msgid "Deterministic Regressors"
+msgstr "Régresseurs Déterministes"
+
+msgid "Constant (Intercept)"
+msgstr "Constante (Ordonnée à l'origine)"
+
+msgid "Trend"
+msgstr "Tendance"
+
+msgid "Both (Constant + Trend)"
+msgstr "Les deux (Constante + Tendance)"
+
+msgid "None"
+msgstr "Aucun"
+
+msgid "Forecast Horizon (n.ahead)"
+msgstr "Horizon de Prévision (n.ahead)"
+
+msgid "Compute Granger Causality Tests (Cause -> Effect)"
+msgstr "Calculer Tests de Causalité de Granger (Cause -> Effet)"
+
+msgid "Plot Impulse Response Functions (IRF)"
+msgstr "Tracer les Fonctions de Réponse Impulsionnelle (IRF)"
+
+msgid "Save VAR Model (varest) as"
+msgstr "Enregistrer le Modèle VAR (varest) sous"
+
+msgid "Save VAR Forecast as"
+msgstr "Enregistrer la Prévision VAR sous"
+
+msgid "Save Forecast Plot (recorded) as"
+msgstr "Enregistrer le Graphique VAR (recorded) sous"
+
+msgid "Preview VAR Forecast Plot"
+msgstr "Prévisualiser la Prévision VAR"
+
+# ================= COMPARTIDOS =================
+msgid "Plot Theme (ggplot2)"
+msgstr "Thème du Graphique (ggplot2)"
+
+msgid "Minimal (Clean business look)"
+msgstr "Minimaliste (Style affaires épuré)"
+
+msgid "Classic (Scientific)"
+msgstr "Classique (Scientifique)"
+
+msgid "Black & White (Grid)"
+msgstr "Noir & Blanc (Grille)"
+
+msgid "Main Title (Leave empty for default)"
+msgstr "Titre Principal (Laisser vide par défaut)"
+
+msgid "X-Axis Label (Leave empty for default)"
+msgstr "Étiquette Axe X (Laisser vide par défaut)"
+
+msgid "Y-Axis Label (Leave empty for default)"
+msgstr "Étiquette Axe Y (Laisser vide par défaut)"
+
+msgid "Plot Customization"
+msgstr "Personnalisation du Graphique"
+
+msgid "Save Objects to Workspace"
+msgstr "Enregistrer les Objets dans l'Espace de Travail"
+
+msgid "HTML Plot Width (pixels)"
+msgstr "Largeur du Graphique HTML (pixels)"
+
+msgid "HTML Plot Height (pixels)"
+msgstr "Hauteur du Graphique HTML (pixels)"
+
+msgid "Resolution (DPI)"
+msgstr "Résolution (DPI)"
+
+msgid "HTML Graphics Size & Resolution"
+msgstr "Taille et Résolution des Graphiques HTML"
+
+msgid "Save Plot (ggplot2) as"
+msgstr "Enregistrer le Graphique (ggplot2) sous"
+
+msgid "Save Plot Object"
+msgstr "Enregistrer l'Objet Graphique"

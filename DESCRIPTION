@@ -1,0 +1,23 @@
+Package: rk.ts.models
+Type: Package
+Title: SPSS-parity Time Series Modeling for RKWard: Expert Modeler
+        (Auto-ARIMA, ETS, Ensemble, Outliers), Custom ARIMA with
+        Dynamic Regression (xreg), Apply Saved Models, and VAR/Granger
+        Causality.
+Version: 0.0.1
+Date: 2026-11-19
+Author: Alfonso Cano
+Maintainer: Alfonso Cano <alfonso.cano@correo.buap.mx>
+Depends: R (>= 4.0.0)
+Suggests: forecast, ggplot2, vars, tsoutliers
+Enhances: rkward
+Description: SPSS-parity Time Series Modeling for RKWard: Expert
+        Modeler (Auto-ARIMA, ETS, Ensemble, Outliers), Custom ARIMA
+        with Dynamic Regression (xreg), Apply Saved Models, and
+        VAR/Granger Causality.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyLoad: yes
+URL: https://github.com/AlfCano/rk.ts.models
+Authors@R: person(given="Alfonso", family="Cano",
+        email="alfonso.cano@correo.buap.mx", role=c("aut", "cre"))

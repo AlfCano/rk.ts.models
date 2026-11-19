@@ -1,0 +1,137 @@
+<!DOCTYPE rkplugin >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<code file="2.CustomARIMADynamicRegressionxreg.js" />
+	<help file="2.CustomARIMADynamicRegressionxreg.rkh" />
+	<!--
+		<dependencies>
+		</dependencies>
+	-->
+	<logic>
+		<convert id="cond_cust_ts" sources="cust_src_mode.string" mode="equals" standard="ts" />
+		<convert id="cond_cust_df" sources="cust_src_mode.string" mode="equals" standard="df" />
+		<connect governor="cond_cust_ts" client="frm_cust_ts.enabled" />
+		<connect governor="cond_cust_df" client="frm_cust_df.enabled" />
+		<connect governor="cond_cust_df" client="frm_cust_newx.enabled" />
+		<connect governor="cond_cust_df" client="cust_new_vs.enabled" />
+		<script>
+			gui.addChangeCommand("cust_src_mode.string", "update_cust_root()");
+	    gui.addChangeCommand("cust_df.available", "update_cust_root()");
+	    function update_cust_root() {
+	       var mode = gui.getValue("cust_src_mode.string");
+	       var df = gui.getValue("cust_df.available");
+	       if (mode === "df") {
+	          if (df !== "") {
+	             gui.setValue("cust_vs.root", df);
+	          } else {
+	             gui.setValue("cust_vs.root", "");
+	          }
+	       } else {
+	          gui.setValue("cust_vs.root", "");
+	       }
+	    }
+		</script>
+	</logic>
+	<dialog label="2. Custom ARIMA &amp; Dynamic Regression (xreg)">
+		<column id="clm_t1DR1DRIDS">
+			<tabbook>
+				<tab label="1. Data &amp; Regressors" id="tab_1DtRgrss">
+					<row id="row_vIDSTSOUAR">
+						<varselector id="cust_vs" />
+						<column id="clm_rIDSTSOUAR">
+							<radio id="cust_src_mode" label="Input Data Source">
+								<option label="Time Series Object (ts - Univariate ARIMA)" value="ts" checked="true" />
+								<option label="Data Frame (Dynamic Regression with External Regressors xreg)" value="df" />
+							</radio>
+							<frame label="Univariate Series Input" id="frm_cust_ts">
+								<varslot id="cust_ts" label="Time Series Object (ts)" source="cust_vs" classes="ts" />
+							</frame>
+							<frame label="Dynamic Regression Input (Data Frame)" id="frm_cust_df">
+								<varslot id="cust_df" label="Training Data Frame" source="cust_vs" classes="data.frame" />
+								<varslot id="cust_y" label="Target Variable (Y, Numeric)" source="cust_vs" classes="numeric integer" />
+								<varslot id="cust_xreg" label="External Regressors (xreg - Optional, Numeric)" source="cust_vs" classes="numeric integer" multi="true" />
+								<dropdown id="cust_freq" label="Frequency">
+									<option label="Monthly (12)" value="12" checked="true" />
+									<option label="Quarterly (4)" value="4" />
+									<option label="Yearly (1)" value="1" />
+									<option label="Weekly (52)" value="52" />
+									<option label="Daily - Business (5)" value="5" />
+									<option label="Daily - Full (7)" value="7" />
+								</dropdown>
+								<row id="row_sSY2020130">
+									<spinbox label="Start Year" id="cust_yr" initial="2020" min="1" max="3000" type="integer" />
+									<spinbox label="Start Period" id="cust_pd" initial="1" min="1" max="365" type="integer" />
+								</row>
+							</frame>
+							<stretch />
+						</column>
+					</row>
+				</tab>
+				<tab label="2. ARIMA Order &amp; Horizon" id="tab_2ARIMAOH">
+					<row id="row_vFRDFARIMA">
+						<varselector id="cust_new_vs" label="Future Regressors Data Frames" />
+						<column id="clm_fARIMAPDQS">
+							<frame label="ARIMA(p,d,q)(P,D,Q) Specification" id="frm_ARIMAPDQ">
+								<row id="row_sARO010D10">
+									<spinbox label="AR Order (p)" id="cust_p" min="0" max="10" type="integer" />
+									<spinbox label="Differencing (d)" id="cust_d" initial="1" min="0" max="3" type="integer" />
+									<spinbox label="MA Order (q)" id="cust_q" initial="1" min="0" max="10" type="integer" />
+								</row>
+								<row id="row_sSARPP05SD">
+									<spinbox label="Seasonal AR (P)" id="cust_P" min="0" max="5" type="integer" />
+									<spinbox label="Seasonal Diff (D)" id="cust_D" initial="1" min="0" max="2" type="integer" />
+									<spinbox label="Seasonal MA (Q)" id="cust_Q" initial="1" min="0" max="5" type="integer" />
+								</row>
+							</frame>
+							<checkbox id="cust_const" label="Include Constant / Drift (include.constant = TRUE)" value="1" checked="true" />
+							<checkbox id="cust_bc" label="Apply Auto Box-Cox Transformation (lambda = 'auto')" value="1" />
+							<spinbox label="Forecast Horizon (h - Used when no xreg)" id="cust_h" initial="12" min="1" max="240" type="integer" />
+							<frame label="Future Predictors for Forecasting (xreg)" id="frm_cust_newx">
+								<varslot id="cust_newdf" label="Future Regressors Data Frame (newxreg - Required if xreg used)" source="cust_new_vs" classes="data.frame" />
+							</frame>
+							<stretch />
+						</column>
+					</row>
+				</tab>
+				<tab label="3. Plot Options" id="tab_3PltOptn">
+					<column id="clm_fPCPCPT2MC">
+						<frame label="Plot Customization" id="frm_PltCstmz">
+							<dropdown id="cust_theme" label="Plot Theme (ggplot2)">
+								<option label="Minimal (Clean business look)" value="minimal" checked="true" />
+								<option label="Classic (Scientific)" value="classic" />
+								<option label="Black &amp; White (Grid)" value="bw" />
+							</dropdown>
+							<input label="Main Title (Leave empty for default)" id="cust_plot_main" />
+							<input label="X-Axis Label (Leave empty for default)" id="cust_plot_xlab" />
+							<input label="Y-Axis Label (Leave empty for default)" id="cust_plot_ylab" />
+						</frame>
+						<stretch />
+					</column>
+				</tab>
+				<tab label="4. Output" id="tab_4Output">
+					<column id="clm_fSOWSOWSAR">
+						<frame label="Save Objects to Workspace" id="frm_SvObjctW">
+							<saveobject label="Save ARIMA Model Object as" checkable="true" checked="true" initial="custom_model" id="cust_save_mod" />
+							<saveobject label="Save Forecast Object as" checkable="true" checked="true" initial="custom_forecast" id="cust_save_fc" />
+						</frame>
+						<frame label="HTML Graphics Size &amp; Resolution" id="frm_HTMLGrSR">
+							<row id="row_sHTMLPW800">
+								<spinbox label="HTML Plot Width (pixels)" id="cust_plot_w" initial="800" min="100" max="5000" type="integer" />
+								<spinbox label="HTML Plot Height (pixels)" id="cust_plot_h" initial="600" min="100" max="5000" type="integer" />
+								<spinbox label="Resolution (DPI)" id="cust_plot_res" initial="120" min="72" max="600" type="integer" />
+							</row>
+						</frame>
+						<frame label="Save Plot Object" id="frm_SvPltObj">
+							<saveobject label="Save Plot (ggplot2) as" checkable="true" initial="custom_plot" id="cust_save_plot" />
+						</frame>
+						<stretch />
+					</column>
+				</tab>
+			</tabbook>
+			<preview label="Preview Custom ARIMA Plot" id="prv_PCARIMAP" />
+		</column>
+	</dialog>
+</document>

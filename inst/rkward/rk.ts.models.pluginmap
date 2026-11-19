@@ -1,0 +1,169 @@
+<!DOCTYPE
+	rkpluginmap
+>
+<document
+	base_prefix=""
+	namespace="1ExpertModelerAutoARIMAETSEnsemble"
+	id="1ExpertModelerAutoARIMAETSEnsemble_rkward"
+	po_id="1ExpertModelerAutoARIMAETSEnsemble_rkward"
+	priority="medium"
+>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<dependencies
+		R_min_version="4.0.0"
+	>
+		<package
+			name="forecast"
+		/>
+		<package
+			name="ggplot2"
+		/>
+		<package
+			name="vars"
+		/>
+		<package
+			name="tsoutliers"
+		/>
+	</dependencies>
+	<about
+		name="rk.ts.models"
+		shortinfo="SPSS-parity Time Series Modeling for RKWard: Expert Modeler (Auto-ARIMA, ETS, Ensemble, Outliers), Custom ARIMA with Dynamic Regression (xreg), Apply Saved Models, and VAR/Granger Causality."
+		longinfo="SPSS-parity Time Series Modeling for RKWard: Expert Modeler (Auto-ARIMA, ETS, Ensemble, Outliers), Custom ARIMA with Dynamic Regression (xreg), Apply Saved Models, and VAR/Granger Causality."
+		version="0.0.1"
+		releasedate="2026-11-19"
+		url="https://github.com/AlfCano/rk.ts.models"
+		license="GPL (&gt;= 3)"
+	>
+		<author
+			given="Alfonso"
+			family="Cano"
+			email="alfonso.cano@correo.buap.mx"
+			role="aut, cre"
+		/>
+	</about>
+	<require
+		map="rkward::menu"
+	/>
+	<require
+		map="rkward::embedded"
+	/>
+	<components>
+		<component
+			id="cmp_1ExprMAARIMAETSE2CARIMADR"
+			label="2. Custom ARIMA &amp; Dynamic Regression (xreg)"
+			type="standard"
+			file="plugins/2.CustomARIMADynamicRegressionxreg.xml"
+		>
+		</component>
+		<component
+			id="cmp_1ExprtMdlrAtARIMAETSE3ASM"
+			label="3. Apply Saved Model"
+			type="standard"
+			file="plugins/3.ApplySavedModel.xml"
+		>
+		</component>
+		<component
+			id="cmp_1ExprtMAARIMAETSE4TCMVARG"
+			label="4. Temporal Causal Modeling (VAR &amp; Granger)"
+			type="standard"
+			file="plugins/4.TemporalCausalModelingVARGranger.xml"
+		>
+		</component>
+		<component
+			id="cmp_1EMAARIMAETSE1EMAARIMAETS"
+			label="1. Expert Modeler (Auto-ARIMA, ETS, Ensemble)"
+			type="standard"
+			file="plugins/1.ExpertModelerAutoARIMAETSEnsemble.xml"
+		>
+		</component>
+	</components>
+	<hierarchy>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="time_series"
+				label="time_series"
+			>
+				<menu
+					id="TimeSeriesModels"
+					label="Time Series Models"
+				>
+					<entry
+						component="cmp_1ExprMAARIMAETSE2CARIMADR"
+					/>
+				</menu>
+			</menu>
+		</menu>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="time_series"
+				label="time_series"
+			>
+				<menu
+					id="TimeSeriesModels"
+					label="Time Series Models"
+				>
+					<entry
+						component="cmp_1ExprtMdlrAtARIMAETSE3ASM"
+					/>
+				</menu>
+			</menu>
+		</menu>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="time_series"
+				label="time_series"
+			>
+				<menu
+					id="TimeSeriesModels"
+					label="Time Series Models"
+				>
+					<entry
+						component="cmp_1ExprtMAARIMAETSE4TCMVARG"
+					/>
+				</menu>
+			</menu>
+		</menu>
+		<menu
+			id="analysis"
+			label="Analysis"
+		>
+			<menu
+				id="time_series"
+				label="time_series"
+			>
+				<menu
+					id="TimeSeriesModels"
+					label="Time Series Models"
+				>
+					<entry
+						component="cmp_1EMAARIMAETSE1EMAARIMAETS"
+					/>
+				</menu>
+			</menu>
+		</menu>
+	</hierarchy>
+	<!--
+		<context
+			id="x11"
+		>
+		</context>
+	-->
+	<!--
+		<context
+			id="import"
+		>
+		</context>
+	-->
+</document>

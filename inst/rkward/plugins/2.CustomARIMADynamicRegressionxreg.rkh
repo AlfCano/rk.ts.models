@@ -1,0 +1,97 @@
+<!DOCTYPE rkhelp >
+<document>
+	<!--
+		this code was generated using the rkwarddev package.
+	perhaps don't make changes here, but in the rkwarddev script instead!
+	-->
+	<summary>
+	</summary>
+	<usage>
+	</usage>
+	<!--
+		<section id="sct_EDITORDE" title="EDIT OR DELETE ME">
+			EDIT OR DELETE ME
+		</section>
+	-->
+	<settings>
+		<caption id="tab_1DtRgrss" />
+		<setting id="cust_src_mode">
+		</setting>
+		<caption id="frm_cust_ts" />
+		<setting id="cust_ts">
+		</setting>
+		<caption id="frm_cust_df" />
+		<setting id="cust_df">
+		</setting>
+		<setting id="cust_y">
+		</setting>
+		<setting id="cust_xreg">
+		</setting>
+		<setting id="cust_freq">
+		</setting>
+		<setting id="cust_yr">
+		</setting>
+		<setting id="cust_pd">
+		</setting>
+		<caption id="tab_2ARIMAOH" />
+		<caption id="frm_ARIMAPDQ" />
+		<setting id="cust_p">
+		</setting>
+		<setting id="cust_d">
+		</setting>
+		<setting id="cust_q">
+		</setting>
+		<setting id="cust_P">
+		</setting>
+		<setting id="cust_D">
+		</setting>
+		<setting id="cust_Q">
+		</setting>
+		<setting id="cust_const">
+		</setting>
+		<setting id="cust_bc">
+		</setting>
+		<setting id="cust_h">
+		</setting>
+		<caption id="frm_cust_newx" />
+		<setting id="cust_newdf">
+		</setting>
+		<caption id="tab_3PltOptn" />
+		<caption id="frm_PltCstmz" />
+		<setting id="cust_theme">
+		</setting>
+		<setting id="cust_plot_main">
+		</setting>
+		<setting id="cust_plot_xlab">
+		</setting>
+		<setting id="cust_plot_ylab">
+		</setting>
+		<caption id="tab_4Output" />
+		<caption id="frm_SvObjctW" />
+		<setting id="cust_save_mod">
+		</setting>
+		<setting id="cust_save_fc">
+		</setting>
+		<caption id="frm_HTMLGrSR" />
+		<setting id="cust_plot_w">
+		</setting>
+		<setting id="cust_plot_h">
+		</setting>
+		<setting id="cust_plot_res">
+		</setting>
+		<caption id="frm_SvPltObj" />
+		<setting id="cust_save_plot">
+		</setting>
+	</settings>
+	<!--
+		<related>
+			<ul>
+				<li>
+					<link href="rkward://rhelp/..." />
+				</li>
+			</ul>
+		</related>
+	-->
+	<technical>
+	</technical>
+</document>
